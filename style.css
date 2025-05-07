@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue",  Arial, sans-serif;
+  margin: auto;
+}
+
+body {
+  background-color: black; /* You can also use the hex code #000000 or #000 */
+}
+
+.bg-image {
+  position: absolute;
+  bottom: -88%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 165px 0 124px;
+  width: 100%;
+  margin: auto;
+  border: #fbab40; /* This border property looks incomplete */
+  height: 100vh;
+  /* Change the background color to black */
+  background-color: black; /* Or use #000000 or #000 */
+  /* background-color: #242628; */
+  background-image: url(./assets/world.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 70px;
+  background-origin: padding-box;
+}
+
+.header h3 {
+  text-align: center;
+  color: #ff9e40;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  line-height: 36px;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  font-style: normal;
+}
+
+.header > h1 {
+  font-style: normal;
+  font-weight: 600;
+  /* Fluid font size using clamp */
+  font-size: clamp(30px, 5vw, 60px); /* Adjust these values as needed */
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.header > p {
+  font-style: normal;
+  font-weight: 400;
+  /* Fluid font size using clamp */
+  font-size: clamp(18px, 2.5vw, 30px); /* Adjust these values as needed */
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+  flex-grow: 0;
+  margin: 16px 0px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+}
+
+.options > a {
+  color: #ffffff;
+  text-decoration: underline;
+  margin: 0px 8px;
+  font-weight: 400;
+  font-size: 24px; /* Consider making these fluid too if needed */
+  line-height: 150%;
+}
+
+.options > a:first-of-type {
+  margin-right: 30px;
+}
+
+.logo {
+  margin-top: 05px;
+}
+
+.logo > img {
+
+  /* Make width fluid using clamp, and height auto for aspect ratio */
+  width: 50; /*clamp(80px, 12vw, 200px); Adjust these values as needed */
+  height: 50; /* Important for maintaining aspect ratio */
+  border: 5px solid red; /* Add a very obvious red border */
+  margin: 50; /* Keep margin auto for centering */
+}
+
+.learn-more > a > button {
+  background: #f6821f;
+  border-radius: 4px;
+  border: none;
+  width: 180px; /* This button width is fixed */
+  margin-top: 78px;
+  height: 55px; /* This button height is fixed */
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  background: rgba(246, 130, 31, 1);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        background-size: contain;
+        background-position-y: center;
+    }
+    /* Note: With clamp(), you might not need to redefine font sizes here */
+    /* unless you want different min/preferred/max ranges specifically below 1024px */
+}
+
+@media screen and (max-width: 600px) {
+  .container{
+    background-size: contain;
+    background-position-y: center;
+  }
+  /* Note: With clamp(), you might not need to redefine font sizes here */
+  /* unless you want different min/preferred/max ranges specifically below 600px */
+
+  pre {
+    font-size: 0.8rem; /* This font size is relative, which is good */
+    padding: 8px 12px;
+    width: 100%;
+  }
+
+  body {
+    width: 100vw;
+  }
+
+  .header img {
+    margin-left: 0;
+  }
+
+  .installation-steps {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    /* This rule inside the media query for h1 might conflict with clamp() */
+    /* If clamp() handles your desired range, you can likely remove or adjust this */
+    /* font-size: 1.6rem; */
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+  /* Closing curly brace for the 600px media query was misplaced in original */
+}
+
+/* Removed the extra closing curly brace found at the end of the original file */
